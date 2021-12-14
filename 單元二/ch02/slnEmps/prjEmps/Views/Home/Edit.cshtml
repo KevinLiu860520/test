@@ -1,0 +1,24 @@
+﻿@model prjEmps.Models.tEmployee
+
+@{
+    ViewBag.Title = "員工修改";
+}
+
+<h2>員工修改</h2>
+
+<form method="post" action="@Url.Action("Edit")">
+    <input type="hidden" value="@Model.fId" name="fId" />
+    <p>
+        員工姓名<input type="text" name="fName" value="@Model.fName" required class="form-control" />
+    </p>
+    <p>
+        員工電話<input type="text" name="fPhone" value="@Model.fPhone" required class="form-control" />
+    </p>
+    <p>
+        員工薪資<input type="number" name="fSalary" value="@Model.fSalary" required class="form-control"
+                   max="70000" min="20000" />
+    </p>
+    <p>
+        <input type="submit" value="儲存" class="btn btn-danger" />
+    </p>
+</form>
